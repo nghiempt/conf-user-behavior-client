@@ -8,6 +8,7 @@ import { GET_ALL_APPS, GET_ALL_SURVEYS } from "@/fetch/fetch_data";
 import { ROUTE } from "@/constant/route";
 import Cookie from 'js-cookie';
 import LogoutIcon from '@mui/icons-material/Logout';
+import { limitString } from "@/utils/helper";
 
 export default function Choose() {
 
@@ -117,7 +118,7 @@ export default function Choose() {
                 >
                   <Avatar alt="avatar" src={item?.app_thumbnail} />
                   <div className="flex flex-col justify-center items-start ml-6">
-                    <h1 className={`text-[18px] font-semibold`}>{item?.app_name}</h1>
+                    <h1 className={`text-[18px] font-semibold`}>{limitString(item?.app_name, 20)}</h1>
                     <h1 className="text-[16px] font-meduim">{renderCategory(item?.category_id)}</h1>
                     {checkSurveyed(item?.app_id)}
                   </div>

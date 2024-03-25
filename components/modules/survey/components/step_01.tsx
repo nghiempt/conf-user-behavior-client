@@ -100,7 +100,7 @@ export default function Step01({ setOpIcr, setOpIcm, setOpIcs, setAppId }: { set
                             <h1 className="text-[16px] font-semibold">Data shared</h1>
                             <div className="w-full grid grid-cols-4 gap-1">
                                 {
-                                    app?.dataSafety_shared?.split(', ')?.map((item: any, index: any) => {
+                                    app?.data_safety_shared?.split(', ')?.map((item: any, index: any) => {
                                         return (
                                             <button
                                                 key={index}
@@ -117,7 +117,7 @@ export default function Step01({ setOpIcr, setOpIcm, setOpIcs, setAppId }: { set
                             <h1 className="text-[16px] font-semibold">Data collected</h1>
                             <div className="w-full grid grid-cols-4 gap-1">
                                 {
-                                    app?.dataSafety_collected?.split(', ')?.map((item: any, index: any) => {
+                                    app?.data_safety_collected?.split(', ')?.map((item: any, index: any) => {
                                         return (
                                             <button
                                                 key={index}
@@ -137,11 +137,11 @@ export default function Step01({ setOpIcr, setOpIcm, setOpIcs, setAppId }: { set
                         </div>
                         <div className="w-full flex flex-col gap-y-1 py-2 text-justify">
                             <h1 className="text-[16px] font-semibold">Data shared</h1>
-                            <p className="text-[13px]">{limitString(app?.privacyPolicy_shared || '', 300)}</p>
+                            <p className="text-[13px]">{limitString(app?.privacy_policy_shared || '', 300)}</p>
                         </div>
                         <div className="w-full flex flex-col gap-y-1 py-2 text-justify">
                             <h1 className="text-[16px] font-semibold">Data collected</h1>
-                            <p className="text-[13px]">{limitString(app?.privacyPolicy_collected || '', 300)}</p>
+                            <p className="text-[13px]">{limitString(app?.privacy_policy_collected || '', 300)}</p>
                         </div>
                     </div>
                 </div>
@@ -150,7 +150,7 @@ export default function Step01({ setOpIcr, setOpIcm, setOpIcs, setAppId }: { set
                         <h1 className="px-4 flex gap-x-2"><h1 className="font-bold">Incorrect:</h1> {app?.incorrect_description}</h1>
                     </div>
                     <div className={`w-full py-2 flex justify-start items-center rounded-md ${app?.incomplete_status === 1 ? '!border !border-[2px] !border-red-500' : 'bg-gray-200'}`}>
-                        <h1 className="px-4 flex gap-x-2"><h1 className="font-bold text-gray-400">Incomplete</h1>{app?.incomplete_description}</h1>
+                        <h1 className="px-4 flex gap-x-2"><h1 className="font-bold">Incomplete</h1>{app?.incomplete_description}</h1>
                     </div>
                     <div className={`w-full py-2 flex justify-start items-center rounded-md ${app?.inconsistent_status === 1 ? '!border !border-[2px] !border-red-500' : 'bg-gray-200'}`}>
                         <h1 className="px-4 flex gap-x-2"><h1 className="font-bold">Inconsistent:</h1> {app?.inconsistent_description}</h1>
